@@ -42,10 +42,10 @@ public class CountryCodeConverter {
                 String line = iterator.next();
                 String[] parts = line.split("\t");
                 String code = parts[0];
-                String countryCode = parts[1];
+                String country = parts[1];
 
-                countryCodeToCountry.put(code, countryCode);
-                countryToCountryCode.put(countryCode, code);
+                countryCodeToCountry.put(code, country);
+                countryToCountryCode.put(country, code);
             }
         }
         catch (IOException | URISyntaxException ex) {
