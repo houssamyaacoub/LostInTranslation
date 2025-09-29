@@ -31,6 +31,8 @@ public class JSONTranslator implements Translator {
         this("sample.json");
     }
 
+
+
     /**
      * Construct a JSONTranslator populated using data from the specified resources file.
      * @param filename the name of the file in resources to load the data from
@@ -51,7 +53,6 @@ public class JSONTranslator implements Translator {
 
                 List<String> languages = new ArrayList<>();
 
-                // TODO Task C: record this countryCode in the correct instance variable
                 if (!countryCodes.contains(countryCode)) {
                     countryCodes.add(countryCode);
                 }
@@ -60,7 +61,6 @@ public class JSONTranslator implements Translator {
                 for (String key : countryData.keySet()) {
                     if (!key.equals("id") && !key.equals("alpha2") && !key.equals("alpha3")) {
                         String languageCode = key;
-                        // TODO Task C: record this translation in the appropriate instance variable
 
                         String translation = countryData.getString(key);
                         String translationKey = countryCode + "-" + languageCode;
@@ -80,7 +80,6 @@ public class JSONTranslator implements Translator {
     }
     @Override
     public List<String> getLanguageCodes() {
-        // TODO Task C: return a copy of the language codes
         return new ArrayList<>(languageCodes);
     }
 
@@ -91,7 +90,6 @@ public class JSONTranslator implements Translator {
 
     @Override
     public String translate(String countryCode, String languageCode) {
-        // TODO Task C: complete this method using your instance variables as needed
         String key = countryCode + "-" + languageCode;
         return translations.get(key);
     }
